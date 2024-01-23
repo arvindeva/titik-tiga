@@ -1,5 +1,6 @@
 import NavBar from "@/components/ui/NavBar";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
             <h1 className="text-9xl tracking-tight text-white sm:text-9xl mb-10">
               . . .
             </h1>
-            <h1 className="text-9xl font-bold tracking-tight text-white sm:text-9xl mb-10">
+            <h1 className="text-6xl font-bold tracking-tight text-white sm:text-9xl mb-10">
               .titik.tiga.
             </h1>
             <h1 className="text-4xl font-bold tracking-tight text-neutral-200 sm:text-6xl mb-10">

@@ -32,7 +32,7 @@ export default function HotelCard({
   description,
 }: HotelCardProps) {
   return (
-    <Card className="flex sm:flex-row flex-col w-full max-w-screen-xl border rounded-md">
+    <Card className="flex sm:flex-row flex-col w-full max-w-screen-xl border border-neutral-200 rounded-none">
       <div className="sm:w-7/12 overflow-hidden">
         <Image
           alt={name}
@@ -45,9 +45,11 @@ export default function HotelCard({
       </div>
       <div className="flex flex-col justify-between sm:w-5/12 p-2">
         <div>
-          <CardHeader className="text-2xl font-semibold">{name}</CardHeader>
+          <CardHeader className="text-2xl font-semibold">
+            {name.toLowerCase()}
+          </CardHeader>
           <CardContent className="text-sm text-gray-400 dark:text-gray-400">
-            <div className="mb-10">{description}</div>
+            <div className="mb-10">{description.toLowerCase()}</div>
             <div className="flex flex-row  gap-x-10 gap-y-3 mb-10 text-sm text-gray-200 dark:text-gray-200 flex-wrap">
               <div className="flex flex-row gap-x-2">
                 <PersonStanding />
@@ -60,23 +62,23 @@ export default function HotelCard({
 
               <div className="flex flex-row gap-x-2">
                 <Speaker />
-                <div>Bose speaker</div>
+                <div>bose speaker</div>
               </div>
               <div className="flex flex-row gap-x-2">
                 <Bath />
-                <div>Bathtub</div>
+                <div>bathtub</div>
               </div>
               <div className="flex flex-row gap-x-2">
                 <LampDesk />
-                <div>Workdesk</div>
+                <div>workdesk</div>
               </div>
               <div className="flex flex-row gap-x-2">
                 <Clapperboard />
-                <div>Netflix</div>
+                <div>netflix</div>
               </div>
               <div className="flex flex-row gap-x-1">
                 <Coffee />
-                <div>Tea/Coffee making</div>
+                <div>tea/coffee making</div>
               </div>
             </div>
             <div className="mb-16 underline">more info</div>
@@ -88,7 +90,7 @@ export default function HotelCard({
               <div>{price}</div>
             </div>
             <div className="flex flex-col w-full">
-              <Button size="sm">Book Now</Button>
+              <Button size="sm">book now</Button>
             </div>
           </CardFooter>
         </div>

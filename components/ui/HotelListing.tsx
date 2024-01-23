@@ -3,8 +3,8 @@ import RoomCard from "@/components/ui/RoomCard";
 const hotelData = [
   {
     id: 1,
-    name: "Titik Tiga Room",
-    price: "IDR 2,250,000/night",
+    name: "titik tiga room",
+    price: "idr 2,250,000/night",
     image: "/images/rooms/titik-dua-room.jpg",
     description:
       "Cozy rooms with handcrafted furniture, floor-to-ceiling windows, a choice of king-size or twin beds featuring artisanal rugs, runners, and curated amenities, celebrating Indonesian craftsmanship.",

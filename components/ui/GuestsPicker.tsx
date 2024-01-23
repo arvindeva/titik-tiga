@@ -17,22 +17,22 @@ export function GuestsPicker() {
           variant="outline"
           id="date"
           className={cn(
-            "w-[260px] justify-center text-left font-normal"
+            "w-[260px] justify-center border-neutral-200 text-left rounded-none font-normal"
             // !date && "text-muted-foreground"
           )}
         >
           <UserRound className="mr-2 h-4 w-4" />
-          <div>2 Adult • 0 Children • 1 Room</div>
+          <div>2 adult • 0 children • 1 room</div>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="w-80 border-neutral-200">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <h4 className="font-medium leading-none">Add guests</h4>
+            <h4 className="font-medium leading-none">add guests</h4>
           </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Adult</Label>
+              <Label htmlFor="width">adult</Label>
               <Input
                 id="width"
                 defaultValue="100%"
