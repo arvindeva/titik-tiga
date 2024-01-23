@@ -3,10 +3,8 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -34,45 +32,45 @@ export default function HotelCard({
   description,
 }: HotelCardProps) {
   return (
-    <Card className="flex sm:flex-row flex-col w-full max-w-7xl border rounded-md">
-      <div className="sm:w-2/3">
+    <Card className="flex sm:flex-row flex-col w-full max-w-screen-2xl border rounded-md">
+      <div className="sm:w-7/12 overflow-hidden">
         <Image
-          alt="Aksen Room"
-          className="w-full h-full object-cover"
+          alt={name}
+          className="w-full h-full object-cover hover:scale-125 transition-all"
           src={image}
           priority
           width="700"
           height="500"
         />
       </div>
-      <div className="flex flex-col justify-between sm:w-1/3 p-2">
+      <div className="flex flex-col justify-between sm:w-5/12 p-2">
         <div>
-          <CardHeader className="text-xl font-semibold">{name}</CardHeader>
+          <CardHeader className="text-2xl font-semibold">{name}</CardHeader>
           <CardContent className="text-sm text-gray-400 dark:text-gray-400">
-            <div className="mb-6">{description}</div>
-            <div className="flex flex-row  gap-x-4 gap-y-3 mb-6 text-sm text-gray-200 dark:text-gray-200 flex-wrap">
-              <div className="flex flex-row gap-x-1">
+            <div className="mb-10">{description}</div>
+            <div className="flex flex-row  gap-x-10 gap-y-3 mb-10 text-sm text-gray-200 dark:text-gray-200 flex-wrap">
+              <div className="flex flex-row gap-x-2">
                 <PersonStanding />
                 <div>2 guests</div>
               </div>
-              <div className="flex flex-row gap-x-1">
+              <div className="flex flex-row gap-x-2">
                 <Grid2X2 />
                 <div>27m</div>
               </div>
 
-              <div className="flex flex-row gap-x-1">
+              <div className="flex flex-row gap-x-2">
                 <Speaker />
                 <div>Bose speaker</div>
               </div>
-              <div className="flex flex-row gap-x-1">
+              <div className="flex flex-row gap-x-2">
                 <Bath />
                 <div>Bathtub</div>
               </div>
-              <div className="flex flex-row gap-x-1">
+              <div className="flex flex-row gap-x-2">
                 <LampDesk />
                 <div>Workdesk</div>
               </div>
-              <div className="flex flex-row gap-x-1">
+              <div className="flex flex-row gap-x-2">
                 <Clapperboard />
                 <div>Netflix</div>
               </div>

@@ -23,19 +23,19 @@ export default function HeroBanner() {
           utmost comfort and privacy, where every detail is meticulously curated
           to pamper your senses.
         </p> */}
-        <div className="mt-10 flex flex-col sm:flex-row text-start justify-center gap-x-2 mb-2">
+        <div className="mt-10 hidden md:flex md:flex-row text-start justify-center gap-x-2 mb-2">
           <Label className="w-[260px] pl-6">Add dates</Label>
           <Label className="w-[260px] pl-6 ">Add guests</Label>
           <Label className="w-[260px]"> </Label>
         </div>
-        <div className="flex flex-col sm:flex-row justify-center gap-x-2 mb-20">
-          <div className="flex flex-col">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-x-2 mb-6 sm:mb-20">
+          <div className="flex flex-col mb-2 sm:mb-0">
             <DatePickerWithRange />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-2 sm:mb-0">
             <GuestsPicker />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-2 sm:mb-0">
             <Button className="w-[260px]">Check Availability</Button>
           </div>
         </div>
