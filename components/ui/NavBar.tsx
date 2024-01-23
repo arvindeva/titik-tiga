@@ -4,7 +4,7 @@ export default function NavBar() {
       <div className="container max-w-screen-2xl flex h-14 items-center">
         <div className="mr-4 hidden md:flex">.titik.tiga.</div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          asd
+          <h2 className="text-2xl">• • •</h2>
         </div>
       </div>
     </header>
