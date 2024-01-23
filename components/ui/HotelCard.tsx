@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function HotelCard() {
   return (
-    <Card className="flex sm:flex-row flex-col w-full max-w-5xl border rounded-md">
+    <Card className="flex sm:flex-row flex-col w-full max-w-7xl border rounded-md">
       <div className="sm:w-3/5">
         <Image
           alt="Aksen Room"
