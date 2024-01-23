@@ -32,7 +32,7 @@ export default function HotelCard({
   description,
 }: HotelCardProps) {
   return (
-    <Card className="flex sm:flex-row flex-col w-full max-w-screen-2xl border rounded-md">
+    <Card className="flex sm:flex-row flex-col w-full max-w-screen-xl border rounded-md">
       <div className="sm:w-7/12 overflow-hidden">
         <Image
           alt={name}
