@@ -16,9 +16,8 @@ export default function HotelCard() {
         <Image
           alt="Aksen Room"
           className="w-full h-full object-cover"
-          height="300"
           src="/images/aksen-room.jpg"
-          width="500"
+          priority
         />
       </div>
       <div className="sm:w-2/5 p-2 space-y-1">
