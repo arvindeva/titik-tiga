@@ -5,7 +5,7 @@ export default function Events() {
   return (
     <main>
       <NavBar />
-      <UnderConstruction />
+      <UnderConstruction pageName="events" />
     </main>
   );
 }

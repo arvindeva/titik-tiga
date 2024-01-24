@@ -81,7 +81,9 @@ export default function NavBar() {
                         </SheetClose>
                       </motion.li>
                       <motion.li variants={list}>
-                        <Link href="/contact">••• contact</Link>
+                        <SheetClose asChild>
+                          <Link href="/contact">••• contact</Link>
+                        </SheetClose>
                       </motion.li>
                     </ul>
                   </SheetDescription>

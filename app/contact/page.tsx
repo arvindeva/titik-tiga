@@ -5,7 +5,7 @@ export default function contact() {
   return (
     <main>
       <NavBar />
-      <UnderConstruction />
+      <UnderConstruction pageName="contacts" />
     </main>
   );
 }
