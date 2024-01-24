@@ -88,7 +88,7 @@ export default function HotelCard({
         <div>
           <CardFooter className="flex flex-col items-start">
             <div className="flex flex-row text-2xl justify-end mb-6 w-full">
-              <div>{price}</div>
+              <div>{price.toLowerCase()}</div>
             </div>
             <div className="flex flex-col w-full">
               <Link className="flex flex-col w-full" href="/book">

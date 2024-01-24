@@ -1,4 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { Button } from "./button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function NavBar() {
   return (
@@ -8,7 +21,28 @@ export default function NavBar() {
           .titik.tiga.
         </Link>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <h2 className="text-2xl">• • •</h2>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button className="bg-transparent text-neutral-200 hover:bg-transparent">
+                <h2 className="text-2xl">• • •</h2>
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="bg-black bg-opacity-50 h-full" side="top">
+              <SheetHeader>
+                <SheetTitle className="text-4xl">.titik.tiga.</SheetTitle>
+                <SheetDescription>
+                  Make changes to your profile here. Click save when you're
+                  done.
+                </SheetDescription>
+              </SheetHeader>
+              <div className="grid gap-4 py-4"></div>
+              <SheetFooter>
+                <SheetClose asChild>
+                  <Button type="submit">Save changes</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
