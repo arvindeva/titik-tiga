@@ -15,7 +15,7 @@ export default function HeroBanner() {
     setLoading();
     await setTimeout(() => {
       setIdle();
-    }, 1000);
+    }, 2500);
   };
 
   return (

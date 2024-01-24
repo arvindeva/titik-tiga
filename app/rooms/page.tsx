@@ -7,7 +7,6 @@ import { useStore } from "@/store";
 import LoadingDots from "@/components/ui/LoadingDots";
 
 export default function Rooms() {
-  const setLoading = useStore((state: any) => state.setLoading);
   const status = useStore((state: any) => state.status);
   return (
     <main>
