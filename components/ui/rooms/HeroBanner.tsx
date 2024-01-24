@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { DatePickerWithRange } from "./DatePickerWithRange";
-import { Button } from "./button";
-import { GuestsPicker } from "./GuestsPicker";
+import { DatePickerWithRange } from "@/components/ui/DatePickerWithRange";
+import { Button } from "@/components/ui/button";
+import { GuestsPicker } from "@/components/ui/GuestsPicker";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "./card";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function HeroBanner() {
   return (

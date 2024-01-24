@@ -13,8 +13,27 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function NavBar() {
+  const list = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      x: 100,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  };
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container max-w-screen-xl flex h-14 items-center">
@@ -29,38 +48,47 @@ export default function NavBar() {
               </Button>
             </SheetTrigger>
             <SheetContent className="bg-black bg-opacity-50 h-full" side="top">
-              <SheetHeader>
-                <SheetTitle className="w-full text-4xl pt-11 mb-48">
-                  <div className="container">.titik.tiga.</div>
-                </SheetTitle>
-                <SheetDescription className="w-full text-5xl">
-                  <ul className="container max-w-screen-lg text-neutral-200 font-light flex flex-col gap-y-16">
-                    <li>
-                      <Link href="/">••• home</Link>
-                    </li>
-                    <li>
-                      <Link href="/room">••• rooms</Link>
-                    </li>
-                    <li>
-                      <Link href="/room">••• event</Link>
-                    </li>
-                    <li>
-                      <Link href="/">••• contact</Link>
-                    </li>
-                  </ul>
-                </SheetDescription>
-              </SheetHeader>
-              <div className="grid gap-4 py-4"></div>
-              <SheetFooter>
-                <SheetClose asChild>
-                  <Button
-                    className="absolute top-12 right-96 w-16 h-16 bg-transparent rounded-full text-white hover:text-black hover:duration-300 duration-300"
-                    type="submit"
-                  >
-                    <X className="w-20 h-20" strokeWidth={2} />
-                  </Button>
-                </SheetClose>
-              </SheetFooter>
+              <motion.div initial="hidden" animate="visible" variants={list}>
+                <SheetHeader>
+                  <SheetTitle>
+                    <div className="container w-full text-4xl pt-11 mb-48 flex flex-row justify-between">
+                      <motion.div variants={list}>.titik.tiga.</motion.div>
+                      <SheetClose asChild>
+                        <Button
+                          className="w-16 h-16 bg-transparent rounded-full text-white hover:text-black hover:duration-300 duration-300"
+                          type="submit"
+                        >
+                          <X className="w-20 h-20" strokeWidth={2} />
+                        </Button>
+                      </SheetClose>
+                    </div>
+                  </SheetTitle>
+                  <SheetDescription className="w-full text-5xl">
+                    <ul className="container max-w-screen-lg text-neutral-200 font-light flex flex-col gap-y-16">
+                      <motion.li variants={list}>
+                        <SheetClose asChild>
+                          <Link href="/">••• home</Link>
+                        </SheetClose>
+                      </motion.li>
+                      <motion.li variants={list}>
+                        <SheetClose asChild>
+                          <Link href="/room">••• rooms</Link>
+                        </SheetClose>
+                      </motion.li>
+                      <motion.li variants={list}>
+                        <SheetClose asChild>
+                          <Link href="/events">••• events</Link>
+                        </SheetClose>
+                      </motion.li>
+                      <motion.li variants={list}>
+                        <Link href="/contact">••• contact</Link>
+                      </motion.li>
+                    </ul>
+                  </SheetDescription>
+                </SheetHeader>
+                <div className="grid gap-4 py-4"></div>
+                <SheetFooter></SheetFooter>
+              </motion.div>
             </SheetContent>
           </Sheet>
         </div>

@@ -1,14 +1,13 @@
-import { Calendar } from "@/components/ui/calendar";
-import HeroBanner from "@/components/ui/HeroBanner";
+import HeroBanner from "@/components/ui/rooms/HeroBanner";
 import NavBar from "@/components/ui/NavBar";
-import HotelListing from "@/components/ui/HotelListing";
+import RoomListing from "@/components/ui/rooms/RoomListing";
 
 export default function Book() {
   return (
     <main>
       <NavBar />
       <HeroBanner />
-      <HotelListing />
+      <RoomListing />
     </main>
   );
 }
