@@ -72,7 +72,7 @@ export default function NavBar() {
                       </motion.li>
                       <motion.li variants={list}>
                         <SheetClose asChild>
-                          <Link href="/room">••• rooms</Link>
+                          <Link href="/rooms">••• rooms</Link>
                         </SheetClose>
                       </motion.li>
                       <motion.li variants={list}>

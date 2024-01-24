@@ -66,7 +66,7 @@ export default function HeroBanner() {
             website under construction
           </motion.h1>
           <motion.div variants={list}>
-            <Link href="/room">
+            <Link href="/rooms">
               <Button
                 className="h-20 w-96 text-2xl border-white mb-24"
                 variant="outline"

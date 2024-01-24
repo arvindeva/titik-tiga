@@ -87,6 +87,18 @@ svg #hello {
   stroke-miterlimit: 1.5;
 }
 
+.dot-shuttle {
+  position: relative;
+  left: -15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: white;
+  color: transparent;
+  margin: -1px 0;
+  filter: blur(2px);
+}
+
 html,
 body {
   width: 100%;

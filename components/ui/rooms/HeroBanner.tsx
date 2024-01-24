@@ -6,8 +6,18 @@ import { Button } from "@/components/ui/button";
 import { GuestsPicker } from "@/components/ui/GuestsPicker";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { useStore } from "@/store";
 
 export default function HeroBanner() {
+  const setLoading = useStore((state: any) => state.setLoading);
+  const setIdle = useStore((state: any) => state.setIdle);
+  const onCheckAvailability = async () => {
+    setLoading();
+    await setTimeout(() => {
+      setIdle();
+    }, 1000);
+  };
+
   return (
     <div className="px-6 pt-6 container max-w-screen-2xl lg:px-8 lg:pb-8">
       <div className="text-center">
@@ -41,6 +51,7 @@ export default function HeroBanner() {
               <Button
                 className="w-[260px] bg-white text-black"
                 variant="outline"
+                onClick={onCheckAvailability}
               >
                 check availability
               </Button>
