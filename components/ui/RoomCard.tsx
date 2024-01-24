@@ -17,6 +17,7 @@ import {
   Clapperboard,
   Coffee,
 } from "lucide-react";
+import Link from "next/link";
 
 interface HotelCardProps {
   name: string;
@@ -32,7 +33,7 @@ export default function HotelCard({
   description,
 }: HotelCardProps) {
   return (
-    <Card className="flex sm:flex-row flex-col w-full max-w-screen-xl border border-neutral-200 rounded-none">
+    <Card className="flex sm:flex-row flex-col w-full max-w-screen-xl rounded-none">
       <div className="sm:w-7/12 overflow-hidden">
         <Image
           alt={name}
@@ -43,7 +44,7 @@ export default function HotelCard({
           height="500"
         />
       </div>
-      <div className="flex flex-col justify-between sm:w-5/12 p-2">
+      <div className="flex flex-col justify-between sm:w-5/12 p-2 border border-neutral-200 border-l-0">
         <div>
           <CardHeader className="text-2xl font-semibold">
             {name.toLowerCase()}
@@ -90,7 +91,9 @@ export default function HotelCard({
               <div>{price}</div>
             </div>
             <div className="flex flex-col w-full">
-              <Button size="sm">book now</Button>
+              <Link className="flex flex-col w-full" href="/book">
+                <Button size="sm">book now</Button>
+              </Link>
             </div>
           </CardFooter>
         </div>

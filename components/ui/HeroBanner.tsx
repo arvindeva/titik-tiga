@@ -24,7 +24,7 @@ export default function HeroBanner() {
           utmost comfort and privacy, where every detail is meticulously curated
           to pamper your senses.
         </p> */}
-        <Card className="m-auto  w-full lg:w-[879px] h-full lg:h-[120px] rounded-none border-neutral-400 border sm:border-2 mb-10">
+        <Card className="m-auto  w-full lg:w-[879px] h-full lg:h-[120px] rounded-none border-neutral-400 border sm:border-2 mb-10 ">
           <div className="mt-6 hidden lg:flex lg:flex-row text-start justify-center gap-x-2 mb-2">
             <Label className="w-[260px] pl-6 text-white">add dates</Label>
             <Label className="w-[260px] pl-6 text-white">add guests</Label>

@@ -20,12 +20,12 @@ export default function Home() {
               website under construction
             </h1>
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-4xl mb-10">
-              <Link href="/book">
+              <Link href="/room">
                 <Button
                   className="h-20 w-96 text-2xl border-white"
                   variant="outline"
                 >
-                  book now
+                  view available rooms
                 </Button>
               </Link>
             </h2>
