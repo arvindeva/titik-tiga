@@ -57,3 +57,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(100px);
+  }
+}
+
+svg #wheel {
+  animation: scroll ease 1.5s infinite;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 20px;
+}
+
+svg #mouse {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 10px;
+}
+svg #hello {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1.5;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}

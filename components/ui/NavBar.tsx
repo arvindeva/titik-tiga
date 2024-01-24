@@ -33,10 +33,19 @@ export default function NavBar() {
                 <SheetTitle className="w-full text-4xl pt-11 mb-48">
                   <div className="container">.titik.tiga.</div>
                 </SheetTitle>
-                <SheetDescription className="w-full text-4xl">
-                  <ul className="container max-w-screen-lg text-neutral-400">
+                <SheetDescription className="w-full text-5xl">
+                  <ul className="container max-w-screen-lg text-neutral-200 font-light flex flex-col gap-y-16">
                     <li>
-                      <Link href="/">home</Link>
+                      <Link href="/">••• home</Link>
+                    </li>
+                    <li>
+                      <Link href="/room">••• rooms</Link>
+                    </li>
+                    <li>
+                      <Link href="/room">••• event</Link>
+                    </li>
+                    <li>
+                      <Link href="/">••• contact</Link>
                     </li>
                   </ul>
                 </SheetDescription>
@@ -45,10 +54,10 @@ export default function NavBar() {
               <SheetFooter>
                 <SheetClose asChild>
                   <Button
-                    className="absolute top-16 right-96 w-16 h-16 rounded-full bg-neutral-200"
+                    className="absolute top-12 right-96 w-16 h-16 bg-transparent rounded-full text-white hover:text-black hover:duration-300 duration-300"
                     type="submit"
                   >
-                    <X size={48} strokeWidth={3} />
+                    <X className="w-20 h-20" strokeWidth={2} />
                   </Button>
                 </SheetClose>
               </SheetFooter>
