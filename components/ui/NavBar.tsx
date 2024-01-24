@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { X } from "lucide-react";
 
 export default function NavBar() {
   return (
@@ -29,16 +30,26 @@ export default function NavBar() {
             </SheetTrigger>
             <SheetContent className="bg-black bg-opacity-50 h-full" side="top">
               <SheetHeader>
-                <SheetTitle className="text-4xl">.titik.tiga.</SheetTitle>
-                <SheetDescription>
-                  Make changes to your profile here. Click save when you're
-                  done.
+                <SheetTitle className="w-full text-4xl pt-11 mb-48">
+                  <div className="container">.titik.tiga.</div>
+                </SheetTitle>
+                <SheetDescription className="w-full text-4xl">
+                  <ul className="container max-w-screen-lg text-neutral-400">
+                    <li>
+                      <Link href="/">home</Link>
+                    </li>
+                  </ul>
                 </SheetDescription>
               </SheetHeader>
               <div className="grid gap-4 py-4"></div>
               <SheetFooter>
                 <SheetClose asChild>
-                  <Button type="submit">Save changes</Button>
+                  <Button
+                    className="absolute top-16 right-96 w-16 h-16 rounded-full bg-neutral-200"
+                    type="submit"
+                  >
+                    <X size={48} strokeWidth={3} />
+                  </Button>
                 </SheetClose>
               </SheetFooter>
             </SheetContent>
