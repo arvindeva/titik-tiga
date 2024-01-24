@@ -23,7 +23,7 @@ export default function NavBar() {
       transition: {
         duration: 0.3,
         when: "beforeChildren",
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
     hidden: {
@@ -37,7 +37,7 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container max-w-screen-xl flex h-14 items-center">
-        <Link href="/" className="mr-4 hidden md:flex">
+        <Link href="/" className="mr-4 hidden md:flex text-xl">
           .titik.tiga.
         </Link>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
@@ -51,7 +51,7 @@ export default function NavBar() {
               <motion.div initial="hidden" animate="visible" variants={list}>
                 <SheetHeader>
                   <SheetTitle>
-                    <div className="container w-full text-4xl pt-11 mb-48 flex flex-row justify-between">
+                    <div className="container w-full text-4xl pt-11 mb-32 flex flex-row justify-between">
                       <motion.div variants={list}>.titik.tiga.</motion.div>
                       <SheetClose asChild>
                         <Button

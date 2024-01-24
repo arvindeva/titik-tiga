@@ -16,25 +16,6 @@ export default function HeroBanner() {
       transition: {
         duration: 1,
         when: "beforeChildren",
-        staggerChildren: 0.3,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      y: 100,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  };
-
-  const socialsList = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        when: "beforeChildren",
         staggerChildren: 0.2,
       },
     },
@@ -57,22 +38,22 @@ export default function HeroBanner() {
           className="text-center"
         >
           <div>
-            <motion.div className="flex flex-row align-center justify-center space-x-12 mb-16">
+            <motion.div className="flex flex-row align-center justify-center space-x-6 md:space-x-12 mb-16">
               <motion.div
                 variants={list}
-                className="flex flex-col align-center justify-center text-4xl h-36 w-36 bg-white rounded-full text-black"
+                className="flex flex-col align-center justify-center text-2xl md:text-4xl h-24 w-24 md:h-36 md:w-36 bg-white rounded-full text-black"
               >
                 titik
               </motion.div>
               <motion.div
                 variants={list}
-                className="flex flex-col align-center justify-center text-4xl h-36 w-36 bg-white rounded-full text-black"
+                className="flex flex-col align-center justify-center text-2xl md:text-4xl h-24 w-24 md:h-36 md:w-36 bg-white rounded-full text-black"
               >
                 tiga
               </motion.div>
               <motion.div
                 variants={list}
-                className="flex flex-col align-center justify-center text-4xl h-36 w-36 bg-white rounded-full text-black"
+                className="flex flex-col align-center justify-center text-2xl md:text-4xl h-24 w-24 md:h-36 md:w-36 bg-white rounded-full text-black"
               >
                 ubud
               </motion.div>
@@ -80,7 +61,7 @@ export default function HeroBanner() {
           </div>
           <motion.h1
             variants={list}
-            className="text-4xl font-bold tracking-tight text-neutral-200 sm:text-6xl mb-16"
+            className="text-2xl font-bold tracking-tight text-neutral-200 md:text-6xl mb-16"
           >
             website under construction
           </motion.h1>
@@ -95,7 +76,7 @@ export default function HeroBanner() {
             </Link>
           </motion.div>
           <div>
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-6 p-8">
               <motion.div variants={list}>
                 <SocialIcon
                   url="https://www.instagram.com/titikduaubud/"
