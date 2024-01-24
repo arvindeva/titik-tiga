@@ -4,6 +4,7 @@ import HeroBanner from "@/components/ui/rooms/HeroBanner";
 import NavBar from "@/components/ui/NavBar";
 import RoomListing from "@/components/ui/rooms/RoomListing";
 import { useStore } from "@/store";
+import LoadingDots from "@/components/ui/LoadingDots";
 
 export default function Rooms() {
   const setLoading = useStore((state: any) => state.setLoading);
@@ -12,11 +13,13 @@ export default function Rooms() {
     <main>
       <NavBar />
       <HeroBanner />
-      <RoomListing />
-      <div className="fixed top-24 left-10">{status}</div>
-      <div className="fixed top-36 left-10" onClick={setLoading}>
-        ASDASDSAD
-      </div>
+      {status === "loading" ? (
+        <div className="flex flex-col items-center px-6 pt-6 container max-w-screen-2xl lg:px-8 gap-16 mb-10 mt-10">
+          <LoadingDots />
+        </div>
+      ) : (
+        <RoomListing />
+      )}
     </main>
   );
 }
