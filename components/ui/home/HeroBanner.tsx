@@ -6,6 +6,7 @@ import ScrollDownIcon from "@/components/ui/ScrollDownIcon";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { SocialIcon } from "react-social-icons";
 
 export default function HeroBanner() {
   const list = {
@@ -26,6 +27,26 @@ export default function HeroBanner() {
       },
     },
   };
+
+  const socialsList = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  };
+
   return (
     <div className="container max-w-screen-xl mt-4">
       <div className="px-6 pt-6 container max-w-screen-2xl lg:px-8 mt-32">
@@ -73,9 +94,32 @@ export default function HeroBanner() {
               </Button>
             </Link>
           </motion.div>
-          <motion.div variants={list} className="block">
-            <ScrollDownIcon />
-          </motion.div>
+          <div>
+            <div className="flex justify-center gap-6">
+              <motion.div variants={list}>
+                <SocialIcon
+                  url="https://www.instagram.com/titikduaubud/"
+                  bgColor="white"
+                  fgColor="black"
+                />
+              </motion.div>
+              <motion.div variants={list}>
+                <SocialIcon
+                  url="https://www.facebook.com/titikduaubud/"
+                  bgColor="white"
+                  fgColor="black"
+                />
+              </motion.div>
+              <motion.div variants={list}>
+                <SocialIcon
+                  url="https://wa.me/6281139603939"
+                  bgColor="white"
+                  fgColor="black"
+                  network="whatsapp"
+                />
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
