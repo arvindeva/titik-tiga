@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
   const to = request.nextUrl.searchParams.get("to");
 
   if (!room || !from || !to)
-    return NextResponse.redirect(new URL("/", request.url));
+    return NextResponse.redirect(new URL("/rooms", request.url));
 }
 
 // See "Matching Paths" below to learn more
