@@ -26,10 +26,8 @@ export default function BookingForm() {
     <Card className="border-neutral-200">
       <CardHeader className="space-y-1">
         <CardTitle className="text-4xl">your information</CardTitle>
-        <CardDescription>
-          <p className="text-neutral-200">
-            book directly with us for exclusive benefits. more info here.
-          </p>
+        <CardDescription className="text-neutral-200">
+          book directly with us for exclusive benefits. more info here.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
@@ -72,7 +70,6 @@ export default function BookingForm() {
             className="border-neutral-200 rounded-none"
             id="password"
             type="password"
-            placeholder="+62"
           />
         </div>
         <CardTitle className="text-4xl">payment method</CardTitle>
@@ -133,7 +130,7 @@ export default function BookingForm() {
             <Input
               className="border-neutral-200 rounded-none"
               id="number"
-              placeholder="xxxx-xxxx-xxxx-xxxx"
+              placeholder=""
             />
           </div>
           <div className="grid grid-cols-3 gap-4">
@@ -165,10 +162,7 @@ export default function BookingForm() {
             <div className="grid gap-2">
               <Label htmlFor="year">year</Label>
               <Select>
-                <SelectTrigger
-                  className="border-neutral-200 rounded-none"
-                  id="year"
-                >
+                <SelectTrigger id="year">
                   <SelectValue placeholder="year" />
                 </SelectTrigger>
                 <SelectContent>
@@ -185,16 +179,12 @@ export default function BookingForm() {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="cvc">cvc</Label>
-              <Input
-                className="border-neutral-200 rounded-none"
-                id="cvc"
-                placeholder="cvc"
-              />
+              <Input id="cvc" placeholder="cvc" />
             </div>
           </div>
         </CardContent>
         <CardTitle className="text-4xl">policies</CardTitle>
-        <CardDescription className="flex flex-row gap-x-8">
+        <div className="flex flex-row gap-x-8">
           <div>
             <div>check in</div>
             <div>after 3pm</div>
@@ -203,26 +193,21 @@ export default function BookingForm() {
             <div>check out</div>
             <div>before 12pm</div>
           </div>
-        </CardDescription>
-        <CardDescription>
+        </div>
+        <div>
           <div>ROOM 1 STUDIO QUEEN</div>
-          Guarantee Policy A valid credit card must be provided at the time of
-          booking. While no charges will be applied to the card at that time,
-          the hotel reserves the right to pre-authorize the card for the amount
-          of the stay prior to arrival. Cancel Policy Cancellations must be
-          received by 3PM local time two days prior to arrival to avoid a one
-          night room & tax charge.
-        </CardDescription>
-        <CardTitle className="text-4xl">acknowledgement</CardTitle>
-        <CardDescription>
           <div>
-            By completing this booking, I agree with the Booking Conditions.
+            Guarantee Policy A valid credit card must be provided at the time of
+            booking. While no charges will be applied to the card at that time,
+            the hotel reserves the right to pre-authorize the card for the
+            amount of the stay prior to arrival. Cancel Policy Cancellations
+            must be received by 3PM local time two days prior to arrival to
+            avoid a one night room & tax charge.
           </div>
-          <div>* I agree with the Privacy Terms.</div>
-        </CardDescription>
+        </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">book</Button>
+        <Button className="w-full">book!!!!!!!!!!!</Button>
       </CardFooter>
     </Card>
   );
