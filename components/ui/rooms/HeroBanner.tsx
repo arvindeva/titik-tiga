@@ -1,14 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import { DatePickerWithRange } from "@/components/ui/DatePickerWithRange";
 import { Button } from "@/components/ui/button";
+import { DateRange } from "react-day-picker";
 import { GuestsPicker } from "@/components/ui/GuestsPicker";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useStore } from "@/store";
 
-export default function HeroBanner() {
+interface HeroBannerProps {
+  date: DateRange | undefined;
+  setDate: Dispatch<SetStateAction<DateRange | undefined>>;
+}
+
+export default function HeroBanner(props: HeroBannerProps) {
   const setLoading = useStore((state: any) => state.setLoading);
   const setIdle = useStore((state: any) => state.setIdle);
   const onCheckAvailability = async () => {
@@ -42,7 +48,7 @@ export default function HeroBanner() {
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-x-2 mb-6 sm:mb-12">
             <div className="flex flex-col mb-2 sm:mb-0">
-              <DatePickerWithRange />
+              <DatePickerWithRange date={props.date} setDate={props.setDate} />
             </div>
             <div className="flex flex-col mb-2 sm:mb-0">
               <GuestsPicker />

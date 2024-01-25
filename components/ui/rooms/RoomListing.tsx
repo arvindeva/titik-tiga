@@ -3,6 +3,7 @@ import RoomCard from "@/components/ui/rooms/RoomCard";
 const hotelData = [
   {
     id: 1,
+    slug: "titik-tiga",
     name: "titik tiga room",
     price: "idr 2,250,000/night",
     image: "/images/rooms/titik-dua-room.jpg",
@@ -11,6 +12,7 @@ const hotelData = [
   },
   {
     id: 2,
+    slug: "aksen",
     name: "Aksen Room",
     price: "IDR 2,750,000/night",
     image: "/images/rooms/aksen-room.jpg",
@@ -19,6 +21,8 @@ const hotelData = [
   },
   {
     id: 3,
+
+    slug: "jeda",
     name: "Jeda Room",
     price: "IDR 2,750,000/night",
     image: "/images/rooms/jeda-room.jpg",
@@ -27,6 +31,7 @@ const hotelData = [
   },
   {
     id: 4,
+    slug: "alinea",
     name: "Alinea Room",
     price: "IDR 2,750,000/night",
     image: "/images/rooms/alinea-room.jpg",
@@ -35,6 +40,7 @@ const hotelData = [
   },
   {
     id: 5,
+    slug: "frasa",
     name: "Frasa Room",
     price: "IDR 2,750,000/night",
     image: "/images/rooms/frasa-room.jpg",
@@ -49,6 +55,7 @@ export default function HotelListing() {
       {hotelData.map((hotel) => {
         return (
           <RoomCard
+            slug={hotel.slug}
             name={hotel.name}
             price={hotel.price}
             image={hotel.image}

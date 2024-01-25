@@ -20,6 +20,7 @@ import {
 import Link from "next/link";
 
 interface HotelCardProps {
+  slug: string;
   name: string;
   price: string;
   image: string;
@@ -27,6 +28,7 @@ interface HotelCardProps {
 }
 
 export default function HotelCard({
+  slug,
   name,
   price,
   image,
@@ -91,7 +93,10 @@ export default function HotelCard({
               <div>{price.toLowerCase()}</div>
             </div>
             <div className="flex flex-col w-full">
-              <Link className="flex flex-col w-full" href="/book">
+              <Link
+                className="flex flex-col w-full"
+                href={`/book?room=${slug}&date=123`}
+              >
                 <Button size="sm">book now</Button>
               </Link>
             </div>
