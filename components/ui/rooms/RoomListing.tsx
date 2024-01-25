@@ -1,4 +1,5 @@
 import RoomCard from "@/components/ui/rooms/RoomCard";
+import { DateRange } from "react-day-picker";
 
 const hotelData = [
   {
@@ -49,12 +50,17 @@ const hotelData = [
   },
 ];
 
-export default function HotelListing() {
+interface RoomListingProps {
+  date: DateRange | undefined;
+}
+
+export default function HotelListing({ date }: RoomListingProps) {
   return (
     <div className="flex flex-col items-center px-6 pt-6 container max-w-screen-2xl lg:px-8 gap-16 mb-10">
       {hotelData.map((hotel) => {
         return (
           <RoomCard
+            date={date}
             slug={hotel.slug}
             name={hotel.name}
             price={hotel.price}

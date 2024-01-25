@@ -23,7 +23,7 @@ export default function Rooms() {
           <LoadingDots />
         </div>
       ) : (
-        <RoomListing />
+        <RoomListing date={date} />
       )}
     </main>
   );

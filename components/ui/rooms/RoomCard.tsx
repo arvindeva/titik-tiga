@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { DateRange } from "react-day-picker";
 import {
   Grid2X2,
   PersonStanding,
@@ -18,8 +19,10 @@ import {
   Coffee,
 } from "lucide-react";
 import Link from "next/link";
+import { addDays, format } from "date-fns";
 
-interface HotelCardProps {
+interface RoomCardProps {
+  date: DateRange | undefined;
   slug: string;
   name: string;
   price: string;
@@ -27,13 +30,28 @@ interface HotelCardProps {
   description: string;
 }
 
-export default function HotelCard({
+export default function RoomCard({
+  date,
   slug,
   name,
   price,
   image,
   description,
-}: HotelCardProps) {
+}: RoomCardProps) {
+  function dateRangeToQueryParams(dateRange: DateRange | undefined): string {
+    console.log(dateRange?.from);
+    console.log(dateRange?.to);
+    // format();
+
+    if (dateRange?.from !== undefined && dateRange?.to !== undefined) {
+      return `from=${format(dateRange?.from, "yyyy-MM-dd")}&to=${format(
+        dateRange?.to,
+        "yyyy-MM-dd"
+      )}`;
+    }
+    return "qwe";
+  }
+
   return (
     <Card className="flex sm:flex-row flex-col w-full max-w-screen-xl rounded-none">
       <div className="sm:w-7/12 overflow-hidden">
@@ -95,7 +113,7 @@ export default function HotelCard({
             <div className="flex flex-col w-full">
               <Link
                 className="flex flex-col w-full"
-                href={`/book?room=${slug}&date=123`}
+                href={`/book?room=${slug}&${dateRangeToQueryParams(date)}`}
               >
                 <Button size="sm">book now</Button>
               </Link>

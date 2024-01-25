@@ -9,26 +9,22 @@ import {
 import { cn } from "@/lib/utils";
 import { UserRound } from "lucide-react";
 import { useState } from "react";
+import { useStore } from "@/store";
 
 export function GuestsPicker() {
-  const [guestCount, setGuestCount] = useState({
-    adult: 2,
-    children: 0,
-    room: 1,
-  });
+  const guestCount = useStore((state: any) => state.guestCount);
+  const setAdultCount = useStore((state: any) => state.setAdultCount);
+  const setChildrenCount = useStore((state: any) => state.setChildrenCount);
 
   const adultClickHandler = (type: "-" | "+") => {
-    setGuestCount({
-      ...guestCount,
-      adult: type === "-" ? guestCount.adult - 1 : guestCount.adult + 1,
-    });
+    if (!(guestCount.adult === 0 && type === "-")) {
+      setAdultCount(type);
+    }
   };
   const childrenClickHandler = (type: "-" | "+") => {
-    setGuestCount({
-      ...guestCount,
-      children:
-        type === "-" ? guestCount.children - 1 : guestCount.children + 1,
-    });
+    if (!(guestCount.children === 0 && type === "-")) {
+      setChildrenCount(type);
+    }
   };
 
   return (
