@@ -1,6 +1,7 @@
 import NavBar from "@/components/ui/NavBar";
 import BookingForm from "@/components/ui/book/BookingForm";
 import Summary from "@/components/ui/book/Summary";
+import { Suspense } from "react";
 
 export default function Book() {
   return (
@@ -12,7 +13,9 @@ export default function Book() {
           <BookingForm />
         </div>
         <div className="sticky top-20 w-2/5 ">
-          <Summary />
+          <Suspense>
+            <Summary />
+          </Suspense>
         </div>
       </div>
     </div>
