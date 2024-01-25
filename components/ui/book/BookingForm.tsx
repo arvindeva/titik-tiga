@@ -19,18 +19,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Apple, Bitcoin, CreditCard } from "lucide-react";
 
 export default function BookingForm() {
+  const guaranteeText =
+    "A valid credit card must be provided at the time of booking. While no charges will be applied to the card at that time, the hotel reserves the right to pre-authorize the card for the amount of the stay prior to arrival. Cancel Policy Cancellations must be received by 3PM local time two days prior to arrival to avoid a one night room & tax charge.";
+
   return (
     <Card className="border-neutral-200">
-      <CardHeader className="space-y-1">
+      <CardContent className="grid gap-4 pt-8">
         <CardTitle className="text-4xl">your information</CardTitle>
-        <CardDescription className="text-neutral-200">
-          book directly with us for exclusive benefits. more info here.
+        <CardDescription className="text-neutral-400">
+          book directly with us for{" "}
+          <span className="text-neutral-200 font-semibold">
+            exclusive benefits
+          </span>
+          . more info{" "}
+          <span className="text-neutral-200 font-semibold underline cursor-pointer">
+            here
+          </span>
+          .
         </CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
         <div className="grid grid-cols-2 gap-6">
           <div>
             <Label htmlFor="firstname">first name</Label>
@@ -162,7 +172,10 @@ export default function BookingForm() {
             <div className="grid gap-2">
               <Label htmlFor="year">year</Label>
               <Select>
-                <SelectTrigger id="year">
+                <SelectTrigger
+                  className="border-neutral-200 rounded-none"
+                  id="year"
+                >
                   <SelectValue placeholder="year" />
                 </SelectTrigger>
                 <SelectContent>
@@ -179,35 +192,51 @@ export default function BookingForm() {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="cvc">cvc</Label>
-              <Input id="cvc" placeholder="cvc" />
+              <Input
+                className="border-neutral-200 rounded-none"
+                id="cvc"
+                placeholder="cvc"
+              />
             </div>
           </div>
         </CardContent>
         <CardTitle className="text-4xl">policies</CardTitle>
         <div className="flex flex-row gap-x-8">
           <div>
-            <div>check in</div>
-            <div>after 3pm</div>
+            <div className="text-neutral-400 text-sm">check in</div>
+            <div className="text-xl">after 3pm</div>
           </div>
           <div>
-            <div>check out</div>
-            <div>before 12pm</div>
+            <div className="text-neutral-400 text-sm">check out</div>
+            <div className="text-xl">before 12pm</div>
           </div>
         </div>
-        <div>
-          <div>ROOM 1 STUDIO QUEEN</div>
-          <div>
-            Guarantee Policy A valid credit card must be provided at the time of
-            booking. While no charges will be applied to the card at that time,
-            the hotel reserves the right to pre-authorize the card for the
-            amount of the stay prior to arrival. Cancel Policy Cancellations
-            must be received by 3PM local time two days prior to arrival to
-            avoid a one night room & tax charge.
+        <div className="mb-8">
+          <div className="text-neutral-400 text-sm">
+            <span className="text-neutral-200 text-base">
+              guarantee policy:{" "}
+            </span>
+            {guaranteeText.toLowerCase()}
+          </div>
+        </div>
+        <CardTitle className="text-4xl">acknowledgement</CardTitle>
+        <div className="items-top flex space-x-2 mb-8">
+          <Checkbox id="terms1" />
+          <div className="grid gap-1.5 leading-none">
+            <label
+              htmlFor="terms1"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              accept terms and conditions
+            </label>
+            <p className="text-sm text-muted-foreground">
+              by completing this booking, i agree with the booking conditions.
+            </p>
           </div>
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">book!!!!!!!!!!!</Button>
+        <Button className="w-full">confirm book</Button>
       </CardFooter>
     </Card>
   );
