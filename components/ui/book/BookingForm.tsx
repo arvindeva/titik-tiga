@@ -19,15 +19,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Bitcoin, CreditCard } from "lucide-react";
+import { Apple, Bitcoin, CreditCard } from "lucide-react";
 
 export default function BookingForm() {
   return (
     <Card className="border-neutral-200">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">guest information</CardTitle>
+        <CardTitle className="text-4xl">your information</CardTitle>
         <CardDescription>
-          book directly with us for exclusive benefits. more info here.
+          <p className="text-neutral-200">
+            book directly with us for exclusive benefits. more info here.
+          </p>
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
@@ -70,22 +72,23 @@ export default function BookingForm() {
             className="border-neutral-200 rounded-none"
             id="password"
             type="password"
+            placeholder="+62"
           />
         </div>
-        <CardTitle className="text-2xl">payment method</CardTitle>
+        <CardTitle className="text-4xl">payment method</CardTitle>
         <CardDescription>
           add a new payment method to your account.
         </CardDescription>
-        <CardContent className="grid gap-6 p-0">
+        <CardContent className="grid gap-6 p-0 mb-8">
           <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
             <div>
               <RadioGroupItem value="card" id="card" className="peer sr-only" />
               <Label
                 htmlFor="card"
-                className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                className="flex flex-col gap-y-2 items-center justify-between rounded-none border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
               >
                 <CreditCard />
-                Card
+                card
               </Label>
             </div>
             <div>
@@ -96,10 +99,10 @@ export default function BookingForm() {
               />
               <Label
                 htmlFor="paypal"
-                className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                className="flex flex-col gap-y-2 items-center justify-between rounded-none border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
               >
                 <Bitcoin />
-                Paypal
+                bitcoin
               </Label>
             </div>
             <div>
@@ -110,26 +113,38 @@ export default function BookingForm() {
               />
               <Label
                 htmlFor="apple"
-                className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                className="flex flex-col gap-y-2 items-center justify-between rounded-none border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
               >
-                Apple
+                <Apple />
+                apple
               </Label>
             </div>
           </RadioGroup>
           <div className="grid gap-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="First Last" />
+            <Label htmlFor="name">name</Label>
+            <Input
+              className="border-neutral-200 rounded-none"
+              id="name"
+              placeholder="first last"
+            />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="number">Card number</Label>
-            <Input id="number" placeholder="" />
+            <Label htmlFor="number">card number</Label>
+            <Input
+              className="border-neutral-200 rounded-none"
+              id="number"
+              placeholder="xxxx-xxxx-xxxx-xxxx"
+            />
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className="grid gap-2">
-              <Label htmlFor="month">Expires</Label>
+              <Label htmlFor="month">expires</Label>
               <Select>
-                <SelectTrigger id="month">
-                  <SelectValue placeholder="Month" />
+                <SelectTrigger
+                  className="border-neutral-200 rounded-none"
+                  id="month"
+                >
+                  <SelectValue placeholder="month" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="1">January</SelectItem>
@@ -148,10 +163,13 @@ export default function BookingForm() {
               </Select>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="year">Year</Label>
+              <Label htmlFor="year">year</Label>
               <Select>
-                <SelectTrigger id="year">
-                  <SelectValue placeholder="Year" />
+                <SelectTrigger
+                  className="border-neutral-200 rounded-none"
+                  id="year"
+                >
+                  <SelectValue placeholder="year" />
                 </SelectTrigger>
                 <SelectContent>
                   {Array.from({ length: 10 }, (_, i) => (
@@ -166,14 +184,45 @@ export default function BookingForm() {
               </Select>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="cvc">CVC</Label>
-              <Input id="cvc" placeholder="CVC" />
+              <Label htmlFor="cvc">cvc</Label>
+              <Input
+                className="border-neutral-200 rounded-none"
+                id="cvc"
+                placeholder="cvc"
+              />
             </div>
           </div>
         </CardContent>
+        <CardTitle className="text-4xl">policies</CardTitle>
+        <CardDescription className="flex flex-row gap-x-8">
+          <div>
+            <div>check in</div>
+            <div>after 3pm</div>
+          </div>
+          <div>
+            <div>check out</div>
+            <div>before 12pm</div>
+          </div>
+        </CardDescription>
+        <CardDescription>
+          <div>ROOM 1 STUDIO QUEEN</div>
+          Guarantee Policy A valid credit card must be provided at the time of
+          booking. While no charges will be applied to the card at that time,
+          the hotel reserves the right to pre-authorize the card for the amount
+          of the stay prior to arrival. Cancel Policy Cancellations must be
+          received by 3PM local time two days prior to arrival to avoid a one
+          night room & tax charge.
+        </CardDescription>
+        <CardTitle className="text-4xl">acknowledgement</CardTitle>
+        <CardDescription>
+          <div>
+            By completing this booking, I agree with the Booking Conditions.
+          </div>
+          <div>* I agree with the Privacy Terms.</div>
+        </CardDescription>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">book!!!!!!!!!!!</Button>
+        <Button className="w-full">book</Button>
       </CardFooter>
     </Card>
   );

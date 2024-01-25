@@ -7,7 +7,7 @@ export default function Book() {
       <NavBar />
       <div className="flex flex-row pt-12 container w-full max-w-screen-xl gap-x-4">
         <div className="w-3/5 p-2">
-          <h1 className="text-4xl font-semibold mb-8">••• guest details</h1>
+          <h1 className="text-6xl font-semibold mb-16">••• your details</h1>
           <BookingForm />
         </div>
         <div className="sticky top-20 w-2/5 ">
