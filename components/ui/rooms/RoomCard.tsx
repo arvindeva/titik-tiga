@@ -39,10 +39,6 @@ export default function RoomCard({
   description,
 }: RoomCardProps) {
   function dateRangeToQueryParams(dateRange: DateRange | undefined): string {
-    console.log(dateRange?.from);
-    console.log(dateRange?.to);
-    // format();
-
     if (dateRange?.from !== undefined && dateRange?.to !== undefined) {
       return `from=${format(dateRange?.from, "yyyy-MM-dd")}&to=${format(
         dateRange?.to,

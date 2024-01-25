@@ -4,6 +4,7 @@ import { roomData } from "@/data/rooms";
 import { useSearchParams } from "next/navigation";
 import { format, parseISO } from "date-fns";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default function Summary() {
   const searchParams = useSearchParams();
@@ -21,33 +22,35 @@ export default function Summary() {
     : null;
 
   return (
-    <div className="sticky top-20 w-full border border-neutral-200">
-      {room && (
-        <div>
+    <Suspense>
+      <div className="sticky top-20 w-full border border-neutral-200">
+        {room && (
           <div>
-            <Image
-              alt="asd"
-              className="w-full h-full"
-              src={room.image}
-              priority
-              width="500"
-              height="500"
-            />
+            <div>
+              <Image
+                alt="asd"
+                className="w-full h-full"
+                src={room.image}
+                priority
+                width="500"
+                height="500"
+              />
+            </div>
+            <div className="p-2">
+              <div>{room?.id}</div>
+              <div>{room?.slug}</div>
+              <div>{room?.name}</div>
+              <div>{room?.price}</div>
+              <div>{room?.image}</div>
+            </div>
           </div>
-          <div className="p-2">
-            <div>{room?.id}</div>
-            <div>{room?.slug}</div>
-            <div>{room?.name}</div>
-            <div>{room?.price}</div>
-            <div>{room?.image}</div>
-          </div>
-        </div>
-      )}
+        )}
 
-      <div className="">Summary</div>
+        <div className="">Summary</div>
 
-      {dateFrom && <div>{formattedDateFrom}</div>}
-      {dateTo && <div>{formattedDateTo}</div>}
-    </div>
+        {dateFrom && <div>{formattedDateFrom}</div>}
+        {dateTo && <div>{formattedDateTo}</div>}
+      </div>
+    </Suspense>
   );
 }
