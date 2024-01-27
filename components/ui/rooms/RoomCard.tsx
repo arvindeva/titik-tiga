@@ -25,7 +25,7 @@ interface RoomCardProps {
   date: DateRange | undefined;
   slug: string;
   name: string;
-  price: string;
+  price: number;
   image: string;
   description: string;
 }
@@ -104,7 +104,7 @@ export default function RoomCard({
         <div>
           <CardFooter className="flex flex-col items-start">
             <div className="flex flex-row text-2xl justify-end mb-6 w-full">
-              <div>{price.toLowerCase()}</div>
+              <div>idr {price}/night</div>
             </div>
             <div className="flex flex-col w-full">
               <Link

@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { UserRound } from "lucide-react";
-import { useState } from "react";
 import { useStore } from "@/store";
 
 export function GuestsPicker() {
