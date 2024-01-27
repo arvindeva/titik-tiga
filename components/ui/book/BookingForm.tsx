@@ -21,6 +21,8 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Apple, Bitcoin, CreditCard } from "lucide-react";
+import { SuccessModal } from "./SuccessModal";
+import { BenefitsModal } from "./BenefitsModal";
 
 export default function BookingForm() {
   const guaranteeText =
@@ -37,9 +39,11 @@ export default function BookingForm() {
               exclusive benefits
             </span>
             . more info{" "}
-            <span className="text-neutral-200 font-semibold underline cursor-pointer">
-              here
-            </span>
+            <BenefitsModal>
+              <span className="text-neutral-200 font-semibold underline cursor-pointer">
+                here
+              </span>
+            </BenefitsModal>
             .
           </CardDescription>
           <div className="grid grid-cols-2 gap-6">
@@ -263,7 +267,9 @@ export default function BookingForm() {
               <span className="bg-background px-2 text-muted-foreground"></span>
             </div>
           </div>
-          <Button className="w-full h-10">confirm book</Button>
+          <SuccessModal>
+            <Button className="w-full h-10">confirm book</Button>
+          </SuccessModal>
         </CardContent>
 
         <CardFooter></CardFooter>
