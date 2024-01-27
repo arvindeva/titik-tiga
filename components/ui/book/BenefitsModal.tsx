@@ -33,8 +33,8 @@ export function BenefitsModal({ children }: BenefitsModalProps) {
           <div className="text-center">
             <p className="text-4xl text-neutral-200 mb-6">•••</p>
           </div>
-          {benefits.map((benefit) => (
-            <p className="text-xl text-neutral-200 mb-4" id={benefit}>
+          {benefits.map((benefit, i) => (
+            <p className="text-xl text-neutral-200 mb-4" key={i}>
               {benefit.toLowerCase()}
             </p>
           ))}
