@@ -8,7 +8,7 @@ interface RoomListingProps {
 
 export default function HotelListing({ date }: RoomListingProps) {
   return (
-    <div className="flex flex-col items-center px-6 pt-6 container max-w-screen-2xl lg:px-8 gap-16 mb-10">
+    <div className="flex flex-col items-center px-6 pt-0 lg:pt-6 container max-w-screen-2xl lg:px-8 gap-16 mb-10">
       {roomData.map((hotel) => {
         return (
           <RoomCard

@@ -63,7 +63,7 @@ export default function NavBar() {
                       </SheetClose>
                     </div>
                   </SheetTitle>
-                  <SheetDescription className="w-full text-5xl">
+                  <SheetDescription className="w-full text-3xl md:text-5xl">
                     <ul className="container max-w-screen-lg text-neutral-200 font-light flex flex-col gap-y-16">
                       <motion.li variants={list}>
                         <SheetClose asChild>

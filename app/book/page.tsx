@@ -9,12 +9,12 @@ export default function Book() {
     <div>
       <NavBar />
       <FadeIn>
-        <div className="flex flex-row pt-12 container w-full max-w-screen-xl gap-x-4">
-          <div className="w-3/5 p-2">
+        <div className="flex flex-col md:flex-row pt-12 container w-full max-w-screen-xl gap-x-4">
+          <div className="w-full md:w-3/5 p-2">
             <h1 className="text-6xl font-semibold mb-8">••• your details</h1>
             <BookingForm />
           </div>
-          <div className="sticky top-20 w-2/5 ">
+          <div className="w-full sticky top-20 md:w-2/5 ">
             <Suspense>
               <Summary />
             </Suspense>

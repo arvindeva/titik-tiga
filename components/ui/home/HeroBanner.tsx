@@ -61,14 +61,14 @@ export default function HeroBanner() {
           </div>
           <motion.h1
             variants={list}
-            className="text-2xl font-bold tracking-tight text-neutral-200 md:text-6xl mb-16"
+            className="text-2xl font-bold tracking-tight text-neutral-200 sm:text-2xl md:text-4xl lg:text-6xl mb-16"
           >
             website under construction
           </motion.h1>
           <motion.div variants={list}>
             <Link href="/rooms">
               <Button
-                className="h-20 w-96 text-2xl border-white mb-24"
+                className="h-10 w-48 md:h-20 md:w-96 md:text-xl lg:text-2xl border-white mb-24"
                 variant="outline"
               >
                 view available rooms

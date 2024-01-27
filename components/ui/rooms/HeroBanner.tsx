@@ -40,20 +40,20 @@ export default function HeroBanner(props: HeroBannerProps) {
           utmost comfort and privacy, where every detail is meticulously curated
           to pamper your senses.
         </p> */}
-        <Card className="m-auto  w-full lg:w-[879px] h-full lg:h-[120px] rounded-none border-neutral-400 border sm:border-2 mb-10 ">
+        <Card className="m-auto  w-full lg:w-[879px] h-full lg:h-[120px] rounded-none lg:border-1 lg:border-neutral-100 lg:border lg:border-1 mb-10 ">
           <div className="mt-6 hidden lg:flex lg:flex-row text-start justify-center gap-x-2 mb-2">
             <Label className="w-[260px] pl-6 text-white">add dates</Label>
             <Label className="w-[260px] pl-6 text-white">add guests</Label>
             <Label className="w-[260px] text-white"> </Label>
           </div>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-x-2 mb-6 sm:mb-12">
-            <div className="flex flex-col mb-2 sm:mb-0">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-x-2 mb-6 lg:mb-12">
+            <div className="flex flex-col mb-2 lg:mb-0">
               <DatePickerWithRange date={props.date} setDate={props.setDate} />
             </div>
-            <div className="flex flex-col mb-2 sm:mb-0">
+            <div className="flex flex-col mb-2 lg:mb-0">
               <GuestsPicker />
             </div>
-            <div className="flex flex-col mb-2 sm:mb-0">
+            <div className="flex flex-col mb-2 lg:mb-0">
               <Button
                 className="w-[260px] bg-white text-black"
                 variant="outline"

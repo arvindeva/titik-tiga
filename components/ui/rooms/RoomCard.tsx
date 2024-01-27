@@ -60,7 +60,7 @@ export default function RoomCard({
           height="500"
         />
       </div>
-      <div className="flex flex-col justify-between sm:w-5/12 p-2 border border-neutral-200 border-l-0">
+      <div className="flex flex-col justify-between sm:w-5/12 p-2 border border-neutral-200 border md:border-l-0">
         <div>
           <CardHeader className="text-2xl font-semibold">
             {name.toLowerCase()}
