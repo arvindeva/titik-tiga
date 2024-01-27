@@ -104,7 +104,13 @@ export default function RoomCard({
         <div>
           <CardFooter className="flex flex-col items-start">
             <div className="flex flex-row text-2xl justify-end mb-6 w-full">
-              <div>idr {price}/night</div>
+              <div>
+                idr{" "}
+                {new Intl.NumberFormat("id-ID", {})
+                  .format(price)
+                  .replace(/\./g, ",")}
+                /night
+              </div>
             </div>
             <div className="flex flex-col w-full">
               <Link

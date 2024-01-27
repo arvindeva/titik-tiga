@@ -7,6 +7,7 @@ import NavBar from "@/components/ui/NavBar";
 import RoomListing from "@/components/ui/rooms/RoomListing";
 import { useStore } from "@/store";
 import LoadingDots from "@/components/ui/LoadingDots";
+import FadeIn from "@/components/FadeIn";
 
 export default function Rooms() {
   const status = useStore((state: any) => state.status);
@@ -17,14 +18,16 @@ export default function Rooms() {
   return (
     <main>
       <NavBar />
-      <HeroBanner date={date} setDate={setDate} />
-      {status === "loading" ? (
-        <div className="flex flex-col items-center px-6 pt-6 container max-w-screen-2xl lg:px-8 gap-16 mb-10 mt-10">
-          <LoadingDots />
-        </div>
-      ) : (
-        <RoomListing date={date} />
-      )}
+      <FadeIn>
+        <HeroBanner date={date} setDate={setDate} />
+        {status === "loading" ? (
+          <div className="flex flex-col items-center px-6 pt-6 container max-w-screen-2xl lg:px-8 gap-16 mb-10 mt-10">
+            <LoadingDots />
+          </div>
+        ) : (
+          <RoomListing date={date} />
+        )}
+      </FadeIn>
     </main>
   );
 }
