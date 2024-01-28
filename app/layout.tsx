@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Titik Tiga Ubud",
-  description: "Design Hotel",
+  title: "titik tiga ubud",
+  description: "design hotel in ubud, bali",
 };
 
 export default function RootLayout({
